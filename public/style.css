@@ -19,3 +19,36 @@ form div {
   margin: 1em;
   display: inline-block;
 }
+
+.custom-welcome {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/*START OF CUSTOM CARD*/
+
+.MuiCard-root.custom-card {
+  background-color: #d9d9d9;
+  color: black;
+  transition: all 0.5s ease-in-out;
+}
+
+.MuiCard-root.custom-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px 5px #fbd743;
+}
+
+.custom-card .content {
+  padding-bottom: 0;
+}
+
+.custom-img {
+  width: 100px;
+  height: 100px;
+}
+
+.product-wrapper {
+  padding-top: 40px;
+  padding-bottom: 30px;
+}
+/*END OF CUSTOM CARD*/

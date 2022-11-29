@@ -1,7 +1,7 @@
 {
-  "name": "fs-app-template",
+  "name": "poke-app",
   "version": "2.0.0",
-  "description": "Some boilerplate code to get you started - get shakin'!",
+  "description": "Pokemon Pokedex app",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
@@ -20,12 +20,16 @@
   "author": "Fullstack Academy of Code",
   "license": "MIT",
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.10.9",
     "bcrypt": "^5.1.0",
     "compression": "^1.7.4",
     "express": "^4.18.2",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
     "pg": "^8.8.0",
+    "pokeapi-js-wrapper": "^1.2.2",
     "sequelize": "^6.25.3"
   },
   "devDependencies": {
