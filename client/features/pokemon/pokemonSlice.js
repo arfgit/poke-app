@@ -6,9 +6,23 @@ export const fetchAllPokemon = createAsyncThunk(
   async () => {
     try {
       const { data } = await axios.get(
-        "https://pokeapi.co/api/v2/pokemon?limit=649"
+        "https://pokeapi.co/api/v2/pokemon?limit=151"
       );
-      console.log(data);
+
+      return data;
+    } catch (err) {
+      console.log(err.response.data);
+    }
+  }
+);
+
+export const fetchSinglePokemon = createAsyncThunk(
+  "/fetchSinglePokemon",
+  async (id) => {
+    try {
+      const { data } = await axios.get(
+        `https://pokeapi.co/api/v2/pokemon/${id}`
+      );
       return data;
     } catch (err) {
       console.log(err.response.data);
@@ -18,11 +32,15 @@ export const fetchAllPokemon = createAsyncThunk(
 
 export const pokemonSlice = createSlice({
   name: "pokemon",
-  initialState: { allPokemon: [] },
+  initialState: { allPokemon: [], singlePokemon: {} },
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchAllPokemon.fulfilled, (state, action) => {
       state.allPokemon = action.payload.results;
+    });
+
+    builder.addCase(fetchSinglePokemon.fulfilled, (state, action) => {
+      state.singlePokemon = action.payload;
     });
   },
 });
