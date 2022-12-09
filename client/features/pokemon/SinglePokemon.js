@@ -10,9 +10,9 @@ const SinglePokemon = () => {
   const dispatch = useDispatch();
 
   const single = useSelector((state) => state.pokemon.singlePokemon);
-  const { name } = single;
+  const { name, abilities } = single;
 
-  console.log(single);
+  console.log("single object info: ", single);
 
   useEffect(() => {
     dispatch(fetchSinglePokemon(id));
@@ -28,7 +28,13 @@ const SinglePokemon = () => {
         height={500}
         className="custom-img"
       />
-      {name}
+
+      {name && capitalizeFirstLetter(name)}
+      <br />
+      {abilities && abilities[0].ability.name}
+      <br />
+      {abilities && abilities[1].ability.name}
+      {/* {abilities && abilities.map((ability) => <li>{ability}</li>)} */}
     </div>
   );
 };

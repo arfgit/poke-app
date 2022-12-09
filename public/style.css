@@ -26,6 +26,26 @@ form div {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+/*Search*/
+.search-container {
+  display: flex;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.search-container .search-icon {
+  align-self: flex-end;
+  margin-bottom: 9px;
+}
+
+.search-container input {
+  width: 200px;
+  margin: 5px;
+}
+
 /*START OF CUSTOM CARD*/
 
 .MuiCard-root.custom-card {
