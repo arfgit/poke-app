@@ -68,6 +68,11 @@ form div {
   height: 100px;
 }
 
+.custom-img-single {
+  width: 400px;
+  height: 400px;
+}
+
 .product-wrapper {
   padding-top: 40px;
   padding-bottom: 30px;

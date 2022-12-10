@@ -34,7 +34,7 @@ const Home = () => {
         <SearchIcon className="search-icon" />
         <TextField
           onChange={handleSearchChange}
-          placeholder="Pokemon"
+          placeholder="ditto"
           variant="standard"
         />
       </div>
