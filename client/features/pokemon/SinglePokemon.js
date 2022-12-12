@@ -23,7 +23,6 @@ const SinglePokemon = () => {
 
   return (
     <div>
-      .s
       <img
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`}
         alt={`${name}`}
@@ -34,12 +33,17 @@ const SinglePokemon = () => {
       <p>Species: {species?.name}</p>
       <div className="ability-container">
         <h4>Abilities:</h4>
-        {abilities?.map((ability) => ability.ability.name)}
+        {abilities?.map((ability) => (
+          <ul>{ability.ability.name}</ul>
+        ))}
       </div>
       <div className="stats-container">
         Stats:
-        {stats?.map((element) => (
-          <p>{`${element.stat.name}: ${element.base_stat}`}</p>
+        {stats?.map((element, i) => (
+          <p
+            key={i}
+            className="pokestats"
+          >{`${element.stat.name.toUpperCase()}: ${element.base_stat}`}</p>
         ))}
       </div>
       {/* {abilities && abilities.map((ability) => <li>{ability}</li>)} */}

@@ -6,7 +6,7 @@ export const fetchAllPokemon = createAsyncThunk(
   async () => {
     try {
       const { data } = await axios.get(
-        "https://pokeapi.co/api/v2/pokemon?limit=151"
+        "https://pokeapi.co/api/v2/pokemon?limit=649"
       );
 
       return data;
