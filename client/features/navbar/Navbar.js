@@ -14,14 +14,16 @@ const Navbar = () => {
 
   return (
     <div className="nav-wrapper">
-      <h1>poke-app</h1>
+      <Link to="/">
+        <img src="./poke-logo.png" alt="logo" className="logo" />
+      </Link>
 
       <nav>
         {isLoggedIn ? (
           <div>
             {/* The navbar will show these links after you log in */}
             <Link to="/home">Home</Link>
-            <Link to="/pokemon">Pokemon</Link>
+            <Link to="/pokemon">Profile</Link>
             <button type="button" onClick={logoutAndRedirectHome}>
               Logout
             </button>

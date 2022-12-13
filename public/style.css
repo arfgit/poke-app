@@ -2,9 +2,15 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: OpenSans;
+  src: url("/OpenSans.ttf") format("woff2");
+}
+
 body {
-  font-family: sans-serif;
-  /* background-color: #f5f5f5; */
+  font-family: OpenSans;
+  background-image: url("/cool-background.png");
+  background-color: #f5f5f5;
   margin: 0px;
 }
 
@@ -33,6 +39,7 @@ label {
 nav {
   margin-left: 2%;
 }
+
 nav a {
   color: white;
   padding: 10px;
@@ -41,6 +48,10 @@ nav a {
 
 nav a:hover {
   color: #fbd743;
+}
+
+.logo {
+  width: 225px;
 }
 
 form div {
@@ -126,5 +137,9 @@ form div {
 @media screen and (max-width: 576px) {
   .nav-wrapper h1 {
     margin-left: 3%;
+  }
+
+  .logo {
+    width: 150px;
   }
 }
