@@ -32,7 +32,11 @@ export const fetchSinglePokemon = createAsyncThunk(
 
 export const pokemonSlice = createSlice({
   name: "pokemon",
-  initialState: { allPokemon: [], singlePokemon: {} },
+  initialState: {
+    allPokemon: [],
+    singlePokemon: {},
+    singleDesc: {},
+  },
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchAllPokemon.fulfilled, (state, action) => {

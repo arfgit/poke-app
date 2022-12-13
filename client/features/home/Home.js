@@ -11,12 +11,11 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import { capitalizeFirstLetter } from "../../../utils";
+
+/* COMPONENT */
 import SearchIcon from "@mui/icons-material/Search";
 import Loading from "../loading/Loading";
 
-/**
- * COMPONENT
- */
 const Home = () => {
   const dispatch = useDispatch();
   const [search, setSearch] = useState("");

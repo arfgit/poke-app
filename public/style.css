@@ -9,9 +9,9 @@
 
 body {
   font-family: OpenSans;
-  background-image: url("/cool-background.png");
-  background-color: #f5f5f5;
+  background-color: #777777;
   margin: 0px;
+  background-image: url("/poke-background-bw.jpg");
 }
 
 a {
@@ -29,6 +29,7 @@ label {
   border: 2px red;
   background-color: #0f0f0f;
   align-items: center;
+  position: sticky;
 }
 
 .nav-wrapper h1 {
@@ -80,11 +81,13 @@ form div {
 .search-container .search-icon {
   align-self: flex-end;
   margin-bottom: 9px;
+  color: black;
 }
 
 .search-container input {
   width: 200px;
   margin: 5px;
+  background-color: white;
 }
 
 /*----------Home---------------*/
