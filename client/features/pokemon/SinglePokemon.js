@@ -33,8 +33,10 @@ const SinglePokemon = () => {
       <p>Species: {species?.name}</p>
       <div className="ability-container">
         <h4>Abilities:</h4>
-        {abilities?.map((ability) => (
-          <ul>{ability.ability.name}</ul>
+        {abilities?.map((ability, i) => (
+          <div key={i}>
+            <ul>{ability.ability.name}</ul>
+          </div>
         ))}
       </div>
       <div className="stats-container">
