@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <div>
+    <div className="nav-wrapper">
       <h1>poke-app</h1>
       <nav>
         {isLoggedIn ? (
@@ -33,7 +33,6 @@ const Navbar = () => {
           </div>
         )}
       </nav>
-      <hr />
     </div>
   );
 };
