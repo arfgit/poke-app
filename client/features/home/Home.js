@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAllPokemon } from "../pokemon/pokemonSlice";
-import { Grid, Card, Container, Typography, TextField } from "@mui/material";
+import {
+  Grid,
+  Card,
+  Container,
+  Typography,
+  TextField,
+  CardMedia,
+} from "@mui/material";
 import { Link } from "react-router-dom";
 import { capitalizeFirstLetter } from "../../../utils";
 import SearchIcon from "@mui/icons-material/Search";
@@ -17,12 +24,12 @@ const Home = () => {
 
   const username = useSelector((state) => state.auth.me.username);
   const _pokemon = useSelector((state) => state.pokemon.allPokemon);
-  console.log(_pokemon);
 
   const handleSearchChange = (e) => {
     setSearch(e.target.value.toLowerCase());
   };
 
+  /* Filter Pokemon By Regions */
   const filters = {
     default: (pokemon) => pokemon,
     Gen1: (pokemon) => _pokemon.indexOf(pokemon) < 151,
@@ -51,17 +58,18 @@ const Home = () => {
           onChange={handleSearchChange}
           placeholder="pikachu"
           variant="standard"
+          style={{ width: "150px" }}
         />
+        <label>Filter: </label>
+        <select name="filter" onChange={(e) => setFilter(e.target.value)}>
+          <option value="default">None</option>
+          <option value="Gen1">Kanto</option>
+          <option value="Gen2">Johto</option>
+          <option value="Gen3">Hoenn</option>
+          <option value="Gen4">Sinnoh</option>
+          <option value="Gen5">Unova</option>
+        </select>
       </div>
-      <label>Filter: </label>
-      <select name="filter" onChange={(e) => setFilter(e.target.value)}>
-        <option value="default">None</option>
-        <option value="Gen1">Kanto</option>
-        <option value="Gen2">Johto</option>
-        <option value="Gen3">Hoenn</option>
-        <option value="Gen4">Sinnoh</option>
-        <option value="Gen5">Unova</option>
-      </select>
       <Container className="product-wrapper">
         <Grid container spacing={2.5}>
           {[..._pokemon]?.filter(filters[filter])?.map((pokemon, i) => {
@@ -78,18 +86,27 @@ const Home = () => {
                 >
                   <Link to={`/pokemon/${pokeIds + 1}`}>
                     <Card className="custom-card">
-                      <img
-                        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${
+                      <CardMedia
+                        component="img"
+                        image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${
                           pokeIds + 1
                         }.svg`}
                         alt={`${pokemon.name}`}
                         title={`${pokemon.name}`}
                         className="custom-img"
+                        align="center"
+                        sx={{
+                          paddingTop: "1em",
+                          objectFit: "contain",
+                        }}
                       />
+
                       <Typography
                         gutterBottom
                         variant="h5"
                         component="h2"
+                        className="poke-name"
+                        align="center"
                       >{`Entry #${
                         pokeIds + 1 < 10
                           ? `00${pokeIds + 1}`
