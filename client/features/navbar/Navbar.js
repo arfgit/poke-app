@@ -15,6 +15,7 @@ const Navbar = () => {
   return (
     <div className="nav-wrapper">
       <h1>poke-app</h1>
+
       <nav>
         {isLoggedIn ? (
           <div>
