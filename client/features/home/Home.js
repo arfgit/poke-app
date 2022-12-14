@@ -12,7 +12,7 @@ import {
 import { Link } from "react-router-dom";
 import { capitalizeFirstLetter } from "../../../utils";
 
-/* COMPONENT */
+/* COMPONENTS */
 import SearchIcon from "@mui/icons-material/Search";
 import Loading from "../loading/Loading";
 
