@@ -9,6 +9,7 @@ import {
   Typography,
   TextField,
   CardMedia,
+  Box,
 } from "@mui/material";
 import { fetchSinglePokemon } from "./pokemonSlice";
 
@@ -52,63 +53,71 @@ const SinglePokemon = () => {
         </Grid>
       </Grid>
       <Grid item xs={12} md={4} className="text">
-        <Grid item xs={12}>
-          <Typography variant="h2">
-            {name && capitalizeFirstLetter(name)}
-          </Typography>
-          <Typography variant="h6">{`#${
-            id < 10 ? `00${id}` : id < 100 ? `0${id}` : id
-          }`}</Typography>
-        </Grid>
-
-        <Grid item xs={12} className="pokeType">
-          {types?.map((type, i) => (
-            <Typography variant="div" key={i}>
-              {type.type.name.toUpperCase()}
+        <Box className="poke-header">
+          <Grid item xs={12}>
+            <Typography variant="h2">
+              {name && capitalizeFirstLetter(name)}
             </Typography>
-          ))}
-        </Grid>
-        <Grid item xs={12} className="pokeBasics">
-          <Typography variant="div">
-            <h4>Height</h4>
-            <p>{`${height / 10}m`}</p>
-          </Typography>
-          <Typography variant="div">
-            <h4>Weight</h4>
-            <p>{`${weight / 10}kgs`}</p>
-          </Typography>
-        </Grid>
-        <Grid container spacing={4} className="pokeAbilities">
-          <Grid item xs={12}>
-            ABILITIES
-            {abilities?.map((ability, i) => (
-              <Typography variant="div" key={i}>
-                {ability.ability.name}
-              </Typography>
-            ))}
+            <Typography variant="h6">{`#${
+              id < 10 ? `00${id}` : id < 100 ? `0${id}` : id
+            }`}</Typography>
+            <Grid item xs={12} style={{ fontSize: "20px", fontWeight: "700" }}>
+              {types?.length <= 1
+                ? types?.map((type, i) => (
+                    <Typography variant="p" key={i}>
+                      {type.type.name.toUpperCase()}
+                    </Typography>
+                  ))
+                : types?.map((type, i) => (
+                    <Typography
+                      variant="p"
+                      style={{ marginRight: "1%" }}
+                      key={i}
+                    >
+                      {type.type.name.toUpperCase() + "  "}
+                    </Typography>
+                  ))}
+            </Grid>
+            <Grid item xs={12}>
+              <h4 style={{ marginBottom: "-2px" }}>ABILITIES</h4>
+              {abilities?.length < 1
+                ? abilities[0].ability.ability.name
+                : abilities?.map((ability, i) => (
+                    <Typography variant="div" key={i}>
+                      {ability.ability.name.toUpperCase() + "  "}
+                    </Typography>
+                  ))}
+            </Grid>
           </Grid>
-        </Grid>
-        <Grid container spacing={4} className="pokeStats">
+        </Box>
+
+        <Box className="pokeBasics">
           <Grid item xs={12}>
-            Stats:
-            {stats?.map((element, i) => (
-              <p
-                key={i}
-                className="pokestats"
-              >{`${element.stat.name.toUpperCase()}: ${element.base_stat}`}</p>
-            ))}
+            <Typography variant="div">
+              <h4>Height</h4>
+              <p>{`${height / 10}m`}</p>
+            </Typography>
+            <Typography variant="div">
+              <h4>Weight</h4>
+              <p>{`${weight / 10}kgs`}</p>
+            </Typography>
           </Grid>
-        </Grid>
-        <Grid container spacing={4} className="pokeAbilities">
-          <Grid item xs={12}>
-            ABILITIES
-            {abilities?.map((ability, i) => (
-              <Typography variant="div" key={i}>
-                {ability.ability.name}
-              </Typography>
-            ))}
+        </Box>
+        <Box className="pokeStats">
+          <Grid container spacing={4}>
+            <Grid item xs={12}>
+              <h4>Stats</h4>
+              {stats?.map((element, i) => (
+                <Typography
+                  key={i}
+                  variant="p"
+                >{`${element.stat.name.toUpperCase()}: ${
+                  element.base_stat
+                }`}</Typography>
+              ))}
+            </Grid>
           </Grid>
-        </Grid>
+        </Box>
       </Grid>
     </Container>
   );

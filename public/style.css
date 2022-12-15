@@ -3,12 +3,12 @@
 }
 
 @font-face {
-  font-family: OpenSans;
-  src: url("/OpenSans.ttf") format("woff2");
+  font-family: Nunito;
+  src: url("/Nunito.woff2") format("woff2");
 }
 
 body {
-  font-family: OpenSans;
+  font-family: Nunito;
   background-color: #777777;
   margin: 0px;
   background-image: url("/poke-background-bw.jpg");
@@ -152,7 +152,6 @@ form div {
 }
 
 .pokemon-view .text {
-  border: red solid 2px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -160,7 +159,7 @@ form div {
 
 .pokemon-view .text h2,
 .pokemon-view .text h6,
-.pokemon-view .text .pokeType {
+.pokemon-view .text {
   text-align: center;
 }
 
@@ -168,23 +167,43 @@ form div {
   font-size: 50px;
 }
 
-.pokemon-view .text .pokeType {
-  display: grid;
-  margin-top: 1%;
+.poke-header {
+  box-shadow: 0 0 0 2px #0f0f0f;
+  border-radius: 15px;
+  background-color: #0f0f0f;
+  color: white;
+  margin-bottom: 3%;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 
 .pokemon-view .text .pokeBasics {
-  text-align: center;
+  box-shadow: 0 0 0 2px #0f0f0f;
+  border-radius: 15px;
+  background-color: #0f0f0f;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 3%;
 }
 
-.pokemon-view .text .pokeBasics h4 {
+.pokemon-view .text .pokeStats {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-shadow: 0 0 0 2px #0f0f0f;
+  border-radius: 15px;
+  background-color: #0f0f0f;
+  color: white;
+}
+
+.pokemon-view .text .pokeStats p {
+  float: right;
+}
+
+.pokemon-view .text .pokeBasics div h4 {
   margin-bottom: -4%;
-}
-
-.pokemon-view .text .pokeBasics {
-  border: solid red 2px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
 }
 
 /*-----Media-----*/

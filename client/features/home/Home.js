@@ -86,6 +86,7 @@ const Home = () => {
                   <Link to={`/pokemon/${pokeIds + 1}`}>
                     <Card className="custom-card">
                       <CardMedia
+                        onLoad={() => "Loading..."}
                         component="img"
                         image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${
                           pokeIds + 1
