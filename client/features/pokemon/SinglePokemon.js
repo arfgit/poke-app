@@ -2,15 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { capitalizeFirstLetter } from "../../../utils";
-import {
-  Grid,
-  Card,
-  Container,
-  Typography,
-  TextField,
-  CardMedia,
-  Box,
-} from "@mui/material";
+import { Grid, Container, Typography, CardMedia, Box } from "@mui/material";
 import { fetchSinglePokemon } from "./pokemonSlice";
 
 /* COMPONENTS */
@@ -23,9 +15,7 @@ const SinglePokemon = () => {
 
   const single = useSelector((state) => state.pokemon.singlePokemon);
 
-  const { name, abilities, species, stats, types, height, weight } = single;
-
-  console.log("single object info: ", single);
+  const { name, abilities, stats, types } = single;
 
   useEffect(() => {
     dispatch(fetchSinglePokemon(id));
@@ -91,29 +81,16 @@ const SinglePokemon = () => {
           </Grid>
         </Box>
 
-        <Box className="pokeBasics">
-          <Grid item xs={12}>
-            <Typography variant="div">
-              <h4>Height</h4>
-              <p>{`${height / 10}m`}</p>
-            </Typography>
-            <Typography variant="div">
-              <h4>Weight</h4>
-              <p>{`${weight / 10}kgs`}</p>
-            </Typography>
-          </Grid>
-        </Box>
         <Box className="pokeStats">
           <Grid container spacing={4}>
-            <Grid item xs={12}>
+            <Grid item xs={12} className="bar-container">
               <h4>Stats</h4>
               {stats?.map((element, i) => (
-                <Typography
-                  key={i}
-                  variant="p"
-                >{`${element.stat.name.toUpperCase()}: ${
-                  element.base_stat
-                }`}</Typography>
+                <Typography key={i} variant="p">
+                  {`${element.stat.name.toUpperCase()}: ${element.base_stat}`}
+                  <br />
+                  <br />
+                </Typography>
               ))}
             </Grid>
           </Grid>

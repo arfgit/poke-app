@@ -20,22 +20,9 @@ const Navbar = () => {
         </Link>
 
         <nav>
-          {isLoggedIn ? (
-            <div>
-              {/* The navbar will show these links after you log in */}
-              <Link to="/home">Home</Link>
-              <Link to="/pokemon">Profile</Link>
-              <button type="button" onClick={logoutAndRedirectHome}>
-                Logout
-              </button>
-            </div>
-          ) : (
-            <div>
-              {/* The navbar will show these links before you log in */}
-              <Link to="/login">Login</Link>
-              <Link to="/signup">Sign Up</Link>
-            </div>
-          )}
+          <div>
+            <Link to="/home">Home</Link>
+          </div>
         </nav>
       </div>
     </div>

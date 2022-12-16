@@ -21,26 +21,12 @@ const AppRoutes = () => {
 
   return (
     <div>
-      {isLoggedIn ? (
-        <Routes>
-          <Route path="/*" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/pokemon" element={<AllPokemon />} />
-          <Route path="/pokemon/:id" element={<SinglePokemon />} />
-        </Routes>
-      ) : (
-        <Routes>
-          <Route path="/*" element={<Home />} />
-          <Route
-            path="/login"
-            element={<AuthForm name="login" displayName="Login" />}
-          />
-          <Route
-            path="/signup"
-            element={<AuthForm name="signup" displayName="Sign Up" />}
-          />
-        </Routes>
-      )}
+      <Routes>
+        <Route path="/*" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/pokemon" element={<AllPokemon />} />
+        <Route path="/pokemon/:id" element={<SinglePokemon />} />
+      </Routes>
     </div>
   );
 };

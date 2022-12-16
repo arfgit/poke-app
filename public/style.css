@@ -198,8 +198,8 @@ form div {
   color: white;
 }
 
-.pokemon-view .text .pokeStats p {
-  float: right;
+.pokemon-view .text .pokeStats .bar-container {
+  margin-bottom: 5%;
 }
 
 .pokemon-view .text .pokeBasics div h4 {
