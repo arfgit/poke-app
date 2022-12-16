@@ -236,4 +236,8 @@ form div {
   .MuiContainer-root.pokemon-view .image-wrapper img {
     width: 100%;
   }
+
+  .pokemon-view .text .pokeStats .bar-container {
+    margin-bottom: 0;
+  }
 }
