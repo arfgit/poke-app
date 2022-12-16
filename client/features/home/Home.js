@@ -50,7 +50,7 @@ const Home = () => {
 
   return (
     <>
-      <h3 className="custom-welcome">Welcome, {username}</h3>
+      <h3 className="custom-welcome">Welcome</h3>
       <div className="search-container">
         <SearchIcon className="search-icon" />
         <TextField
