@@ -1,4 +1,4 @@
-# PokeApp
+# poke-app
 
 ![Poke Gif](./public/poke-deployed.gif)
 
