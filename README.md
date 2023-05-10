@@ -1,6 +1,6 @@
 # PokeApp
 
-![Poke Gif](/poke-deployed.gif)
+![Poke Gif](./public/poke-deployed.gif)
 
 PokeApp is a React application that uses the [Pokemon API](https://pokeapi.co/). This app simulates a PokeDex where users can search, filter, and get more information on any Pokemon within the first 5 regions.
 
